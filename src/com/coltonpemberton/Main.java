@@ -9,11 +9,24 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         NumberFormat formatter = NumberFormat.getCurrencyInstance();
 
-        System.out.print("Principal: ");
-        int principal = scanner.nextInt();
+        int principal = 0;
 
-        System.out.print("Period: ");
-        byte period = scanner.nextByte();
+        while (principal < 1_000 || principal > 1_000_000) {
+            System.out.print("Principal ($1k - $1M): ");
+            principal = scanner.nextInt();
+            if (principal < 1_000 || principal > 1_000_00) {
+                System.out.println("Please enter a number between 1,000 and 1,000,000");
+            }
+        }
+
+        byte period = 0;
+        while (period < 1 || period > 30) {
+            System.out.print("Period (1 - 30): ");
+            period = scanner.nextByte();
+            if (period < 1 || period > 30 ) {
+                System.out.println("Please enter a number between 1and 30");
+            }
+        }
 
         System.out.print("APR: ");
         float APR = (scanner.nextFloat() / 100) / 12;
