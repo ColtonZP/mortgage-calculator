@@ -20,11 +20,12 @@ public class Main {
         }
 
         byte period = 0;
+
         while (period < 1 || period > 30) {
             System.out.print("Period (1 - 30): ");
             period = scanner.nextByte();
-            if (period < 1 || period > 30 ) {
-                System.out.println("Please enter a number between 1and 30");
+            if (period < 1 || period > 30) {
+                System.out.println("Please enter a number between 1 and 30");
             }
         }
 
